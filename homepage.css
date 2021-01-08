@@ -1,0 +1,446 @@
+       * {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+ 
+body {
+    background: #eee;
+    color: #444;
+    -webkit-font-smoothing: antialiased;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+    font-weight: 400;
+    height: auto !important;
+    height: 100%;
+    min-height: 100%;
+    text-rendering: optimizeLegibility;
+}
+ 
+header {
+    background-color: rgb(140, 193, 193);
+    border-bottom: 1px solid rgba(0,0,0,.15);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: fixed;
+}
+ 
+    header > div#logo {
+        line-height: 70px;
+        position: relative;
+    }
+ 
+    header > .menuDown {
+        box-shadow: 0 3px 5px rgba(0,0,0,.15);
+        
+    }
+ 
+    header > .menuUp {
+        box-shadow: none;
+    }
+ 
+        header > div#logo > h1 {
+            color: white;
+            font-weight: 300;
+            text-transform: lowercase;
+        }
+ 
+        header > div#logo > div#navToggle {
+            background-color: rgba(0,0,0,.15);
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: 300ms all ease;
+        }
+ 
+            header > div#logo > div#navToggle:hover {
+                background-color: rgba(0,0,0,.1);
+            }
+ 
+            header > div#logo > div#navToggle > a {
+                color: rgba(255,255,255,.85);
+                display: block;
+                font-size: 0.85em;
+                font-weight: 600;
+                padding: 0 2.5rem;
+                text-decoration: none;
+                transition: 300ms all ease;
+            }
+ 
+                header > div#logo > div#navToggle:hover > a {
+                    color: rgba(255,255,255,1);
+                }
+ 
+    header > nav {
+        background-color: white;
+        display: none;
+        flex: 1;
+        transform: 300ms all ease;
+    }
+ 
+        header nav > ul {
+            list-style-type: none;
+        }
+ 
+            header nav > ul > li {
+                border-bottom: 1px dotted rgba(0,0,0,.1);
+                position: relative;
+            }
+ 
+                header nav > ul > li:last-of-type {
+                    border-bottom: none;
+                }
+ 
+                header nav > ul > li > a {
+                    display: block;
+                    color: rgba(0,0,0,.65);
+                    font-weight: 700;
+                    padding: 1.5rem 0;
+                    text-decoration: none;
+                    transition: 250ms all ease;
+                }
+ 
+                    header nav > ul > li > a span.toggle {
+                        background-color: rgba(0,0,0,.05);
+                        border-radius: 3rem;
+                        color: rgba(0,0,0,.25);
+                        font-size: 0.75em;
+                        font-weight: 500;
+                        padding: 2px 8px;
+                        text-transform: lowercase;
+                    }
+ 
+                    header nav > ul > li > a span.caret {
+                        display: none;
+                    }
+ 
+                    header > nav > ul > li:hover > a {
+                        color: rgb(140, 193, 193);
+                    }
+ 
+            header > nav > ul > li > nav {
+                background-color: rgb(51,51,51);
+                border-radius: 1.5em;
+                box-shadow: 0 2px 8px rgba(0,0,0,.6);
+                display: none;
+                overflow: hidden;
+                position: absolute;
+                right: 5%;
+                width: 90%;
+                z-index: 100;
+            }
+ 
+                header > nav > ul > li > nav > ul > li > a {
+                    color: rgba(255,255,255,.85);
+                    transition: 300ms all ease;
+                }
+ 
+                    header > nav > ul > li > nav > ul > li:hover > a {
+                        background-color: rgba(0,0,0,.6);
+                        color: rgba(255,255,255,1);
+                    }
+ 
+
+@media all and (min-width: 600px) {
+    header > div#logo > div#navToggle {
+        display: none;
+    }
+ 
+    header {
+        background-color: white;
+        flex-direction: row;
+        line-height: 90px;
+        padding: 0 3rem;
+        position: fixed;
+        text-align: left;
+        width: 100%;
+    }
+ 
+    header > div#logo {
+            background-color: transparent;
+            line-height: 90px;
+        }
+ 
+            header > div#logo > h1 {
+                color: rgb(140, 193, 193);
+            }
+ 
+    header > nav {
+        background-color: transparent;
+        display: block;
+    }
+ 
+        header > nav > ul {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+        }
+ 
+            header nav > ul > li {
+                border-bottom: none;
+            }
+ 
+                header nav > ul > li > a {
+                    padding: 0 1.25rem;
+                }
+ 
+                    header nav > ul > li > a span.toggle {
+                        display: none;
+                    }
+ 
+                    header nav > ul > li > a span.caret {
+                        border-bottom: 4px solid transparent;
+                        border-top: 4px solid rgba(0,0,0,.65);
+                        border-right: 4px solid transparent;
+                        border-left: 4px solid transparent;
+                        border-radius: 1px;
+                        content: "";
+                        display: inline-block;
+                        height: 0;
+                        margin: 0 0 0 .25rem;
+                        transition: 250ms all ease;
+                        width: 0;
+                        vertical-align: middle;
+                    }
+ 
+                        header nav > ul > li:hover > a span.caret {
+                            border-top-color: rgb(140, 193, 193);
+                            transform: rotate(270deg);
+                        }
+ 
+    header > nav > ul > li:hover > nav {
+        background-color: rgb(51,51,51);
+        border-radius: .25em;
+        box-shadow: 0 2px 8px rgba(0,0,0,.6);
+        display: block;
+        line-height: 3em;
+        right: -50%;
+        width: 196px;
+    }
+}
+.image
+{
+    width:100%;
+    height:70.90vh;
+    background:url('tourism%201.jpg') no-repeat center center;
+    background-size:cover;
+    overflow:hidden;
+}
+.text
+{
+    position: absolute;
+    font-size:29px;
+    color:rgb(126, 186, 206);
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}.boxes
+{
+    margin-top:130px;
+
+    width:100%;
+    height:400px;
+    background:url('3.jpg') no-repeat center center;
+    background-size:cover;
+    overflow:hidden;
+}
+.container
+{
+  position: relative;
+  width:1200px;
+  height:200px;
+  margin: 35px auto;
+}
+.container .box
+{
+  position: relative;
+  width: calc(400px - 30px);
+  height: calc(350px - 30px);
+  background:#fff;
+  float:left;
+  margin:10px;
+  box-sizing:border-box;
+  overflow: hidden;
+  /*border-radius: 10px;*/
+}
+ .container.box.icon
+ {
+   position:absolute;
+   top: 0;
+   left: 0;
+   width:10px;
+   height:10pxs;
+   transition: 0.5s;
+   z-index:1;
+ }
+ .container.box:hover .icon
+ {
+   top:20px;
+   right: calc(50% -40px);
+   width:80px;
+   height:80px;
+   border-radius:50%;
+ }
+ .container.box:hover.icon.fa
+ {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   font-size:80px;
+   transition: 0.5s;
+ }
+ .footer
+ {
+    margin-top:130px;
+    top:20%
+    width:100%;
+    height:400px;
+    background:url('99.jpg') no-repeat center center;
+    background-size:cover;
+    overflow:hidden;
+
+ }
+ .footer1{
+	position: absolute;
+	top: 180%; 
+	left: 20%;
+	transform: translate(-50%,-50%);
+}
+
+.footer1 h3{
+	color: rgb(228, 55, 55);
+	font-size: 30px;
+}
+
+.footer2{
+	position: absolute;
+	top: 180%;
+	left: 40%;
+	transform: translate(-50%,-50%);
+}
+
+.footer2 h3{
+	color: rgb(228, 55, 55);
+	font-size: 30px;
+}
+
+.footer3{
+	position: absolute;
+	top: 180%;
+	left: 60%;
+	transform: translate(-50%,-50%);
+}
+
+.footer3 h3{
+	color: rgb(228, 55, 55);
+	font-size: 30px;
+}
+
+.footer4{
+	position: absolute;
+	top: 175%;
+	left: 80%;
+	transform: translate(-50%,-50%);
+}
+
+.footer4 h3{
+	color:rgb(228, 55, 55);
+	font-size: 30px;
+}
+
+.footer-content1
+{
+    position: absolute;
+    padding-top: 10px;
+	top:182%;
+	left:20%;
+	  float: left;
+  list-style-type: none;
+  margin-top: 90px;
+  transform: translate(-50%,-50%);
+}
+.A a{
+		color: rgb(228, 55, 55);
+	font-size: 20px;
+	text-decoration: none;
+
+}
+
+.A a:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(44, 49, 110);
+
+}
+
+.footer-content2
+{
+    position: absolute;
+    padding: 2px;
+	top:182%;
+	left:40%;
+	  float: left;
+  list-style-type: none;
+  margin-top: 90px;
+  transform: translate(-50%,-50%);
+}
+.B a:hover{
+  background-color: rgb(255, 255, 255);
+  color: rgb(130, 55, 228);
+
+}
+
+.B a{
+		color: rgb(228, 55, 55);
+	font-size: 20px;
+	text-decoration: none;
+
+}
+
+.footer-content3
+{
+	position: absolute;
+	top:182%;
+    left:60%;
+    padding:2px;
+	  float: left;
+  list-style-type: none;
+  margin-top: 90px;
+  transform: translate(-50%,-50%);
+}
+
+.C a:hover{
+  background-color: blue;
+  color: #fff;
+
+}
+
+.C a{
+		color:rgb(228, 55, 55);
+	font-size: 20px;
+	text-decoration: none;
+
+}
+
+.footer-form{
+		position: absolute;
+	top:175%;
+	left:80%;
+	  float: left;
+  list-style-type: none;
+  margin-top: 90px;
+  transform: translate(-50%,-50%);
+}
+
+
+/*.footer
+{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+    text-align: center;
+}*/

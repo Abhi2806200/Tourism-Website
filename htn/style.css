@@ -1,0 +1,134 @@
+body
+{
+	margin : 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+header{
+	position:absolute;
+	top: 0;
+	left: 0;
+	padding: 0 100px;
+	background: #262626;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+header nav
+{
+	float: left;
+}
+header nav ul{
+	margin-left: 250px;
+	padding: 0;
+	display: flex;
+	float: right;
+}
+
+header nav ul li
+{
+	list-style: none;
+}
+header nav ul li a
+{
+	height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display:block;
+}
+header nav ul li a:hover
+{
+	color:green;
+	background: #2196f3;
+}
+.image
+{
+    width:100%;
+    height:100%;
+    background:url('ho.jpg');
+    background-size:cover;
+    overflow:hidden;
+}
+.text
+{
+    position: absolute;
+    font-size:20px;
+    color:white;
+  top: 40%;
+  left:40%;
+  transform: translate(-50%, -50%);
+}
+.gallery {
+  margin: 10px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 400px;
+}
+
+.gallery:hover {
+  border: 1px solid #777;
+}
+
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+.footer
+{
+    position: relative;
+    top:10%;
+    width: 100%;
+    height: calc(350px - 30px);
+    background-image:url("1.jpg");
+    background-size:cover;
+    box-sizing:border-box;
+    overflow: hidden;
+  }
+
+
+
+  .footer1{
+	position: absolute;
+	top: 10%; 
+	left: 10%;
+	transform: translate(-50%,-50%);
+}
+
+
+
+.footer h3{
+	color: yellow;
+	font-size:60x;
+}
+
+
+
+.footer-content1
+{
+    position: absolute;
+    padding-top: 50px;
+	top:10%;
+    left:15%;
+    margin-top: 90px;
+    transform: translate(-50%,-50%);
+}
+.A a{
+	color: yellow;
+	font-size: 20px;
+	text-decoration: none;
+    display:inline-block; margin-top:10px;
+}
+.A a:hover{
+
+  color: green;
+
+}
